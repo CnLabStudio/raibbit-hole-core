@@ -6,12 +6,12 @@ async function main() {
   console.log("Owner account:", addrs[0].address);
   console.log("Account balance:", (await addrs[0].getBalance()).toString());
 
-  const Tickets = await ethers.getContractFactory("RAIbbitHoleTicket");
-  const ticket = await Tickets.deploy(650, "ipfs://QmanNhSsKqbgkycyHXtbFdrKGBNNm2iXfMrQp8TiApdfeM");
+  const Frens = await ethers.getContractFactory("GalaxyFrens");
+  const frens = await Frens.deploy(650, "https://api.raibbithole.xyz/metadata/");
 
-  await ticket.deployed();
+  await frens.deployed();
 
-  console.log("Token address:", ticket.address);
+  console.log("Token address:", frens.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
