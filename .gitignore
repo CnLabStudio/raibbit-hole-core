@@ -1,3 +1,4 @@
+config/env.json
 data
 build
 node_modules

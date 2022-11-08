@@ -25,9 +25,14 @@ function getNetworks(): NetworksUserConfig {
     hardhat: {
       forking: {
         url: `https://mainnet.infura.io/v3/${infuraApiKey}`,
-        blockNumber: 15774256,
+        blockNumber: 14905987,
         enabled: true,
       },
+    },
+    mainnet: {
+      url: `https://eth-mainnet.g.alchemy.com/v2/8N6WKYOIBS61wn2YdV7S6gzHp06bY-nn`,
+      chainId: 1,
+      accounts: [`0x${process.env.PROJECT_PK}`],
     },
     goerli: {
       url: `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`,
@@ -64,6 +69,7 @@ const hardhatConfig: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
+      mainnet: `${process.env.ETHERSCAN_API_KEY}`,
       goerli: `${process.env.ETHERSCAN_API_KEY}`,
       polygonMumbai: `${process.env.POLYGONSCAN_API_KEY}`,
     },
