@@ -4,7 +4,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { RAIbbitHoleTicket, RugPullFrens } from "../../build/typechain"
 import * as config from "../../config/env.json"
 
-describe("Diamond Tickets", function () {
+describe("RAIbbitHoleTicket", function () {
   let ticket: RAIbbitHoleTicket;
   let rpf: RugPullFrens;
   let addrs: SignerWithAddress[];
@@ -28,15 +28,13 @@ describe("Diamond Tickets", function () {
     });
     
     it("happy path - tokenURI", async function () {
-      await ticket.giveawayTicket(addrs[0].address, 100);
+      await ticket.giveawayTicket(addrs[0].address, 1);
   
       const total = await ticket.totalSupply();
-      expect(total.toNumber()).to.be.equal(100);
+      expect(total.toNumber()).to.be.equal(1);
 
       await ticket.setBaseURI("https://test");
       let tokenURI = await ticket.uri(0);
-      expect(tokenURI).to.be.equal("https://test");
-      tokenURI = await ticket.uri(1);
       expect(tokenURI).to.be.equal("https://test");
     });
 
