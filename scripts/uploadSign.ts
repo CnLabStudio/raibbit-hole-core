@@ -14,7 +14,7 @@ const awsConfig = {
 async function main() {
     const dynamo = new DynamoDB.DocumentClient(awsConfig);
 
-    const jsonPath = path.resolve(__dirname, '../data/whitelist1025.json');
+    const jsonPath = path.resolve(__dirname, '../data/WLwhitelist.json');
     const rawData = fs.readFileSync(jsonPath,{encoding:'utf8', flag:'r'});
     const snapshot = JSON.parse(rawData);
     const allWhitelist = snapshot["whitelist"].length;
