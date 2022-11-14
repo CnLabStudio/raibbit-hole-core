@@ -7,7 +7,6 @@ import { config as dotenvConfig } from "dotenv"
 import { resolve } from "path"
 import * as config from "../../config/env.json"
 
-
 dotenvConfig({ path: resolve(__dirname, "../../.env") })
 
 describe("GalaxyFrens", function () {
