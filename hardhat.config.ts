@@ -24,8 +24,8 @@ function getNetworks(): NetworksUserConfig {
   return {
     hardhat: {
       forking: {
-        url: `https://mainnet.infura.io/v3/${infuraApiKey}`,
-        blockNumber: 14905987,
+        url: `https://eth-mainnet.g.alchemy.com/v2/8N6WKYOIBS61wn2YdV7S6gzHp06bY-nn`,
+        blockNumber: 15966650,
         enabled: true,
       },
     },
@@ -37,7 +37,7 @@ function getNetworks(): NetworksUserConfig {
     goerli: {
       url: `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`,
       chainId: 5,
-      accounts: [`0x${process.env.PROJECT_PK_TEST}`],
+      accounts: [`0x${process.env.PROJECT_PK}`],
     },
     arbitrum: {
       url: "https://arb1.arbitrum.io/rpc",
