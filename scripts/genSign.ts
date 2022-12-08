@@ -4,11 +4,6 @@ import * as path from "path";
 import progress from 'cli-progress';
 import { ethers } from "hardhat";
 
-type Whitelist = {
-  address: string;
-  amount: number;
-};
-
 async function genSign(signer: any, address: string, maxMintableAmount: number) {
   const messageHash = ethers.utils.solidityKeccak256([ "address", "uint256" ], [ address, maxMintableAmount ]);
   const signature = await signer.signMessage(ethers.utils.arrayify(messageHash));
